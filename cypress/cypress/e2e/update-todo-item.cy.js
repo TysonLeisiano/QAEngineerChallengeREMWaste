@@ -4,9 +4,9 @@ describe('Todo App UI Tests', () => {
   });
   
     it('Edits an existing todo', () => {
-    cy.contains('Test Todo Item').parent().find('[data-cy="edit-btn"]').click();
-    cy.get('[data-cy="edit-todo-input"]').clear().type('Test Todo Item New');
+    cy.contains('Testing APIs is fun').parent().find('[data-cy="edit-btn"]').click();
+    cy.get('[data-cy="edit-todo-input"]').clear().type('Testing APIs is fun');
     cy.get('[data-cy="save-btn"]').click();
-    cy.contains('Test Todo Item New').should('be.visible');
+    cy.contains('Testing APIs is fun').should('be.visible');
     });
 });

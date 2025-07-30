@@ -10,7 +10,7 @@
 
 ###  Back-End - Node.js, Express.js & MongoDB Atlas
 
-🖐 Hi there,  It's a full-stack app built in React.js for the frontend and Node.js for the backend. And I've used Mongodb's atlas as a cloud service provider to store data. This app is a simple TODO APP, this is just to showcase the basic working of a Full-stack application built in MERN. This app includes all the CRUD operations performed via exposed APIs. Please free to go through this code and enjoy! Hope you got the insights
+🖐 Hi there,  It's a full-stack app built in React.js for the frontend and Node.js for the backend. And I've used Mongodb's atlas as a cloud service provider to store data. This app is a simple TODO APP, this is just to showcase the basic working of a Full-stack application built in MERN. This app includes all the CRUD operations performed via exposed APIs. With the App's UI and it's endpoints, I have been able to perform tests (UI and APIs respectively)
 
   ## 📦packages used:
 **Frontend -** 
@@ -28,77 +28,50 @@
     http://localhost:8080/post
     http://localhost:8080/delete/${id}
     http://localhost:8080/put/${id}
+    http://localhost:8080/login
  
 
-## 📸 ScreenShots:
-Initial Page
-![Initial page](https://images2.imgbox.com/4c/52/0KsbiqwY_o.jpg)
-
-Add Todo
-![Add todo](https://images2.imgbox.com/af/a5/KFCyJQOt_o.jpg)
-
-
-Mark Todo
-![Mark Todo](https://images2.imgbox.com/24/8e/G15Igd6E_o.jpg)
 
 
 ## 😀How to use this project
 
 1. Well, first clone or download this repo.
-2. Create a cluster in mongodb Atlas, and then create a collection, and get your access URL to your cluster's database and paste it in ***`app.js`*** for ***`MONGODBURL`*** variable.
+2. Create a cluster in mongodb Atlas, and then create a collection, and get your access URL to your cluster's database 
+
+## Environment Variables
+
+Create a `.env` file in the root directory with the following: 
+MONGODBURL=your_mongodb_connection_string
+
+example formart: MONGODBURL=mongodb+srv://<username>:<password>@cluster0.mongodb.net/todo-db?retryWrites=true&w=majority
+
+**Do not commit your `.env` file to version control.** It's already ignored via `.gitignore`.
+
 3. In Root folder, Run `npm install` to install dependent packages for the Node.js server.
 4. In Client folder, Run `npm install` to install dependent packages for the React app.
 6. Now, you're ready to go!
 
+## Running Tests
+# API Tests
+1. make sure backend server is running - npm start from root
+2. cd to postman directory and run
+ - npm install -g newman
+ - npm run test:api
+ - find report of the execution in postman/report.html which you can view in your browser
+
+ # UI Tests
+ 1. Make sure both backend and frontend servers are running. 
+ 2. cd cypress and run either 
+  - npx cypress run (headless mode)
+  - npx cypress open
+
+  ## GitHub Actions
+- The project includes automated workflows:
+    cypress.yml — runs Cypress tests.
+    newman-tests.yml — runs API tests with Newman.
+
+- These workflows are located under .github/workflows/.
 
 
 
-## 📰License
 
-  
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-  
-
-  
-
-## ❤️Loved this project?
-
-Please give me a **star**⭐ to this repo, I'll be happy😊.
-
-  
-
-## 🔗 Let's connect!
-
-  
-
-  
-
-  
-
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&style=plastic)](https://www.linkedin.com/in/hanoak/)
-
-  
-
-  
-
-  
-
-[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white&style=plastic)](https://twitter.com/_hanoak)
-
-  
-
-  
-
-  
-
-[![twitter](https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white&style=plastic)](https://www.youtube.com/channel/UCgqAS2Phb6DNyGD-8n7Jg-Q/?sub_confirmation=1)
-
-  
-
-  
-
-  
-
-[![medium](https://img.shields.io/badge/Medium-000?style=for-the-badge&logo=medium&logoColor=white&style=plastic)](https://medium.com/@hanoak)
