@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 
@@ -28,9 +30,8 @@ app.use((error, req, res, next) => {
 });
 
 mongoose.connect(MONGODBURL)
-    .then(result => {        
-        app.listen(8080);
-    })
-    .catch(error => {
-        console.log(error);
-    });
+mongoose.connect(process.env.MONGODB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
