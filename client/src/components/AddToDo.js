@@ -29,13 +29,15 @@ const AddToDo = ({ addTodo }) => {
 			<Form.Control 
 				type="text"
 				className="input"
+				id="todo-input"
+				data-cy="todo-input"
 				value={name}
 				onChange={e => { setName(e.target.value); setStatus(false) } } 
 				placeholder="Add new todo" />
 		
 		</Col>
 		<Col xs="auto" className="my-1">
-		<Button type="submit">Add Todo</Button>
+		<Button type="submit" data-cy="add-todo-button">Add Todo</Button>
 		</Col>
 	</Row>
 	<br/>

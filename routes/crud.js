@@ -1,5 +1,5 @@
 const express = require('express');
-const { body } = require('express-validator/check');
+const { body } = require('express-validator');
 const crudController = require('../controllers/crud');
 
 const router = express.Router();
@@ -22,5 +22,17 @@ router.put('/put/:tid', [
 ], crudController.putTodo);
 
 router.delete('/delete/:tid', crudController.deleteTodo);
+
+router.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  // Simulate valid login
+  if (username === 'admin' && password === 'password123') {
+    return res.status(200).json({ message: 'Login successful', token: 'mock-token' });
+  }
+
+  // Simulate failed login
+  return res.status(401).json({ message: 'Invalid credentials' });
+});
 
 module.exports = router;

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "start-server": "node app.js"
+    "start-server": "node app.js",
+    "test:api": "newman run ./postman/todo_collection.json -r cli,html --reporter-html-export ./postman/report.html"
   },
   "author": "Hanoak",
   "license": "MIT",
@@ -14,9 +15,11 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-validator": "^6.13.0",
-    "mongoose": "^6.0.12"
+    "mongoose": "^6.0.12",
+    "react-router-dom": "^7.7.1"
   },
   "devDependencies": {
+    "cypress": "^14.5.3",
     "nodemon": "^2.0.14"
   }
 }
